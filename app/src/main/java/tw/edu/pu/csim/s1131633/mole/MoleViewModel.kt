@@ -42,11 +42,14 @@ class MoleViewModel : ViewModel(){
     }
     private fun startCounting() {
         viewModelScope.launch {
-            while (true) { // 無限循環，每秒增加一次
+            var t=0;
+            while (t<60) { // 無限循環，每秒增加一次
                 delay(1000L)
                 stay++ // 計數器加 1，這會自動觸發 UI 更新
                 moveMole()
+                t++
             }
+
         }
     }
     // 根據螢幕寬度,高度及地鼠圖片大小,計算螢幕範圍
