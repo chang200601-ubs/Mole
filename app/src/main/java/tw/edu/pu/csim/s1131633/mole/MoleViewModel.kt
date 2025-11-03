@@ -33,7 +33,11 @@ class MoleViewModel : ViewModel(){
 
 
     fun incrementCounter() {
-        counter++
+        if (stay < 60) {
+            counter++
+        }else if (stay>60) {
+            counter += 0
+        }
     }
 
     init {
